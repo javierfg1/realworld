@@ -7,20 +7,20 @@ We need docker in our system, next [link](https://docs.docker.com/get-docker/) i
 The **Dockerfile** of this repository contain the detail to generate the image.
 
 ```
-docker build -t ivanmargarit/cca2324-bun-app:latest  .
+docker build -t javierfg1/realworld-htmx  .
 ```
 
 Now, we have created the image in our system and we can validate how it looks like executing next:
 
 ```
-docker run -d -p 3000:3000 ivanmargarit/cca2324-bun-app:latest
+docker run -d -p 3000:3000 javierfg1/realworld-htmx
 ```
 In a browser or executing curl, we can see the application running in localhost:3000
 
 Once the image is validated we share it in the DockerHub platform, so we will push the image with next command:
 
 ```
-docker push ivanmargarit/cca2324-bun-app:latest
+docker push javierfg1/realworld-htmx:latest
 ```
 
 ## K8s 
@@ -47,7 +47,7 @@ minikube dashboard
 - To execute our yaml files we need to get the source, so we can clone the project and go to the folder of the project "cd k8s-realworld-htmx"
 
 ```
-git clone https://github.com/ivanocat/k8s-realworld-htmx.git
+git clone https://github.com/javierfg1/realworld.git
 ```
 
 - Now we can execute the comand to deploy our image in the container, but 
@@ -77,7 +77,7 @@ kubectl get services
 - Finally we can execute the minikube command to expose the service, it will automatically open the browser to see the result
 
 ```
-minikube service cca2324-bun-app-service
+minikube service realworld-htmx-service
 ```
 
 - Cleaning up the K8s
@@ -87,13 +87,13 @@ After the testing of our exercice we will want to cleaning up all, following nex
 - Delete the service
 
 ```
-kubectl delete service cca2324-bun-app-service
+kubectl delete service realworld-htmx-service
 ```
 
 - Delete the deployment
 
 ```
-kubectl delete deployment cca2324-bun-app-deployment
+kubectl delete deployment realworld-htmx-deployment
 ```
 
 - Delete all of the minikube clusters
