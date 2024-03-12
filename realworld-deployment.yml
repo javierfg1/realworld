@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: realworld-htmx-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: realworld-htmx
+  template:
+    metadata:
+      labels:
+        app: realworld-htmx
+    spec:
+      containers:
+        - name: realworld-htmx-container
+          image: javierfg1/realworld-htmx:latest
+          ports:
+            - containerPort: 3000
