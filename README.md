@@ -44,7 +44,7 @@ minikube kubectl -- get po -A
 minikube dashboard
 ```
 
-- To execute our yaml files we need to get the source, so we can clone the project and go to the folder of the project "cd k8s-realworld-htmx"
+- To execute our yaml files we need to get the source, so we can clone the project and go to the folder of the project "cd realworld"
 
 ```
 git clone https://github.com/javierfg1/realworld.git
@@ -53,7 +53,7 @@ git clone https://github.com/javierfg1/realworld.git
 - Now we can execute the comand to deploy our image in the container, but 
 
 ```
-kubectl apply -f deployment.yaml
+kubectl apply -f realworld-deployment.yaml
 ```
 
 - To check the deployments
@@ -65,7 +65,7 @@ kubectl get deployments
 - Execute the service
 
 ```
-kubectl apply -f service.yaml
+kubectl apply -f realworld-service.yaml
 ```
 
 - To check the services
