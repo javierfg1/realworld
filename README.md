@@ -53,7 +53,7 @@ git clone https://github.com/javierfg1/realworld.git
 - Now we can execute the comand to deploy our image in the container, but 
 
 ```
-kubectl apply -f realworld-deployment.yaml
+kubectl apply -f realworld-deployment.yml
 ```
 
 - To check the deployments
@@ -65,7 +65,7 @@ kubectl get deployments
 - Execute the service
 
 ```
-kubectl apply -f realworld-service.yaml
+kubectl apply -f realworld-service.yml
 ```
 
 - To check the services
