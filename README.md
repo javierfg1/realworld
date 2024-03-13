@@ -1,47 +1,31 @@
-# Dockerize Bun app and deploy in K8s
-Create an image of a bun application and deploy in K8s
-
-## Docker image
-We need docker in our system, next [link](https://docs.docker.com/get-docker/) indicates how to proceed to install.
-
-The **Dockerfile** of this repository contain the detail to generate the image.
+## Creación imagen partir de un Dockerfile que usa la imagen oficial de Bun
 
 ```
 docker build -t javierfg1/realworld-htmx  .
 ```
 
-Now, we have created the image in our system and we can validate how it looks like executing next:
+# Ejecución y prueba de un contenedor basado en la imagen creada
 
 ```
 docker run -d -p 3000:3000 javierfg1/realworld-htmx
 ```
-In a browser or executing curl, we can see the application running in localhost:3000
+Para probar la aplicación, ejecutar "curl http://localhost:3000" desde la línea de comandos o "http://localhost:3000" desde un navegador local.
+```
 
-Once the image is validated we share it in the DockerHub platform, so we will push the image with next command:
+# Guardamos la imagen en DockerHub: https://hub.docker.com/repository/docker/javierfg1/realworld-htmx/general
 
 ```
 docker push javierfg1/realworld-htmx:latest
 ```
 
-## K8s 
+# Ejecución y prueba de un contenedor basado en la imagen creada
+
 We are using minicube to play with our new image in k8s, to install minicube follow next [link](https://minikube.sigs.k8s.io/docs/start/)
 
 After minikube installation, we are ready to start a cluster executing 
 
 ```
 minikube start
-```
-
-- Alternatively, minikube can download the appropriate version of kubectl and you should be able to use it like this 
-
-```
-minikube kubectl -- get po -A
-```
-
-- Initially, some services such as the storage-provisioner, may not yet be in a Running state. This is a normal condition during cluster bring-up, and will resolve itself momentarily. For additional insight into your cluster state, minikube bundles the Kubernetes Dashboard, allowing you to get easily acclimated to your new environment:
-
-```
-minikube dashboard
 ```
 
 - To execute our yaml files we need to get the source, so we can clone the project and go to the folder of the project "cd realworld"
